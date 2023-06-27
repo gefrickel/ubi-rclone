@@ -30,6 +30,7 @@ RUN curl -L -s \
     chmod +x /usr/local/bin/oc ; \
     chmod +x /usr/local/bin/kubectl
 
+RUN rclone rcd --rc-web-gui
 # RUN mkdir /container-scripts/ && cp /etc/passwd /container-scripts/ && chmod 666 /container-scripts/passwd
 # RUN mkdir -p /runner/.gitlab-runner/ && chmod -R 777 /runner
 
