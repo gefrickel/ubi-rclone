@@ -20,7 +20,8 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     ./aws/install
 
 RUN curl https://rclone.org/install.sh | bash ; \
-    touch /.rclone.conf
+    mkdir -p ~/.config/rclone ; \
+    touch ~/.config/rclone/rclone.conf
 
 RUN curl -L -s \
     https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.2.12/openshift-client-linux-4.2.12.tar.gz \
