@@ -30,11 +30,13 @@ RUN curl -L -s \
     chmod +x /usr/local/bin/oc ; \
     chmod +x /usr/local/bin/kubectl
 
-RUN rclone rcd --rc-web-gui
+### RUN rclone rcd --rc-web-gui
 # RUN mkdir /container-scripts/ && cp /etc/passwd /container-scripts/ && chmod 666 /container-scripts/passwd
 # RUN mkdir -p /runner/.gitlab-runner/ && chmod -R 777 /runner
 
 # ADD container-scripts/* /container-scripts/
 
 ### ENTRYPOINT ["/container-scripts/entrypoint.sh"]
-ENTRYPOINT ["/bin/sh", "-c", "--" , "while true; do sleep 30; done;"]
+### ENTRYPOINT ["/bin/sh", "-c", "--" , "while true; do sleep 30; done;"]
+ENTRYPOINT ["rclone rcd --rc-web-gui"]
+
