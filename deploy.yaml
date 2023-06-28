@@ -17,7 +17,7 @@ spec:
           image: python-image:latest
           ports:
             - name: http
-              containerPort: 5273
+              containerPort: 5572
               protocol: TCP
           resources:
             requests:
@@ -30,9 +30,9 @@ metadata:
   name: ubi-rclone
 spec:
 ports:
-  - name: http-5273
-    port: 5273
+  - name: http-5572
+    port: 5572
     protocol: TCP
-    targetPort: 5273
+    targetPort: 5572
 selector:
   app: rclone-app
