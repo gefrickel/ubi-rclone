@@ -27,3 +27,6 @@ aws configure --profile minio
 ````
 aws --endpoint-url http://minio-velero.apps.cp4d.mop --profile minio s3 ls
 ````
+````
+for i in $(ls -la *.zip | awk '{print $9}'); do aws --endpoint-url http://minio-velero.apps.cp4d.mop --profile minio s3 cp $i s3://yaddayadda; done
+````
