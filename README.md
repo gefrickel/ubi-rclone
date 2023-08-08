@@ -1,5 +1,6 @@
 # ubi-rclone
-Running rclone with UBI
+
+### Running rclone with UBI
 ````
 export XDG_CONFIG_HOME=/tmp
 ````
@@ -18,4 +19,11 @@ EOF
 ````
 ````
 rclone ls dsn: --no-check-certificate
+````
+### Running AWSCLI with UBI
+````
+aws configure --profile minio
+````
+````
+aws --endpoint-url http://minio-velero.apps.cp4d.mop --profile minio s3 ls
 ````
