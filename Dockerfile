@@ -36,6 +36,9 @@ RUN curl -L -s \
 
 # ADD container-scripts/* /container-scripts/
 
+RUN chgrp -R 0 / && \
+    chmod -R g=u /
+
 ### ENTRYPOINT ["/container-scripts/entrypoint.sh"]
 ENTRYPOINT ["/bin/sh", "-c", "--" , "while true; do sleep 30; done;"]
 ### ENTRYPOINT ["/rclone rcd --rc-web-gui"]
