@@ -36,8 +36,11 @@ RUN curl -L -s \
 
 # ADD container-scripts/* /container-scripts/
 
-RUN chgrp -R 0 / && \
-    chmod -R g=u /
+# bla bla 
+# chgrp: changing group of '/sys': Read-only file system
+# error: build error: error building at STEP "RUN chgrp -R 0 / &&     chmod -R g=u /": error while running runtime: exit status 1
+# RUN chgrp -R 0 / && \
+    # chmod -R g=u /
 
 ### ENTRYPOINT ["/container-scripts/entrypoint.sh"]
 ENTRYPOINT ["/bin/sh", "-c", "--" , "while true; do sleep 30; done;"]
