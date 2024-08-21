@@ -10,7 +10,7 @@ FROM registry.access.redhat.com/ubi9/ubi-init
 #     && microdnf clean all
 
 RUN dnf update -y && rm -rf /var/cache/yum
-RUN dnf install nss_wrapper gettext tar gzip unzip git dnsutils -y \
+RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo \
     && dnf clean all
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
@@ -25,7 +25,7 @@ RUN curl https://rclone.org/install.sh | bash ; \
     touch ~/.config/rclone/rclone.conf
 
 RUN curl -L -s \
-    https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.2.12/openshift-client-linux-4.2.12.tar.gz \
+    https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.2.12/openshift-client-linux-4.16.8.tar.gz \
     | tar -C /usr/local/bin/ -zxv oc kubectl ; \
     chmod +x /usr/local/bin/oc ; \
     chmod +x /usr/local/bin/kubectl
