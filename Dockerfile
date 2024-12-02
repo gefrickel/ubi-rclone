@@ -10,7 +10,7 @@ FROM registry.access.redhat.com/ubi9/ubi-init
 #     && microdnf clean all
 
 RUN dnf update -y && rm -rf /var/cache/yum
-RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo screen wget \
+RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget \
     && dnf clean all
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
