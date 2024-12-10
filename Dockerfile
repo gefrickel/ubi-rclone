@@ -10,8 +10,9 @@ FROM registry.access.redhat.com/ubi9/ubi9-init
 #     && microdnf clean all
 
 # RUN dnf config-manager --set-enabled epel && dnf update -y
-RUN subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
-RUN dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+# RUN subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
+# RUN dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 RUN dnf config-manager --set-enabled epel && dnf update -y
 
 RUN dnf update -y && rm -rf /var/cache/yum
