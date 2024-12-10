@@ -16,7 +16,7 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.
 # RUN dnf config-manager --set-enabled epel && dnf update -y
 
 RUN dnf update -y && rm -rf /var/cache/yum
-RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget iputils nmap-ncat screen \
+RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget iputils nmap-ncat screen btop \
     && dnf clean all
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
