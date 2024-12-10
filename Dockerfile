@@ -1,7 +1,7 @@
 # FROM registry.access.redhat.com/ubi8-minimal
 # FROM redhat/ubi8
 # FROM registry.access.redhat.com/ubi8/ubi
-FROM registry.access.redhat.com/ubi9/ubi-init
+FROM registry.access.redhat.com/ubi9/ubi
 # LABEL maintainer=""
 # ENV HOME='/runner/'
 
@@ -10,7 +10,7 @@ FROM registry.access.redhat.com/ubi9/ubi-init
 #     && microdnf clean all
 
 RUN dnf update -y && rm -rf /var/cache/yum
-RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget \
+RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget iputils nmap-ncat screen\
     && dnf clean all
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
