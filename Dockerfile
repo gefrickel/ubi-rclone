@@ -9,6 +9,7 @@ FROM registry.access.redhat.com/ubi9/ubi
 # RUN microdnf install nss_wrapper gettext tar gzip -y \
 #     && microdnf clean all
 
+RUN dnf config-manager --set-enabled epel && dnf update -y
 RUN dnf update -y && rm -rf /var/cache/yum
 RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget iputils nmap-ncat screen\
     && dnf clean all
