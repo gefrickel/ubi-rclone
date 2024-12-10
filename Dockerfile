@@ -9,7 +9,11 @@ FROM registry.access.redhat.com/ubi9/ubi9-init
 # RUN microdnf install nss_wrapper gettext tar gzip -y \
 #     && microdnf clean all
 
+# RUN dnf config-manager --set-enabled epel && dnf update -y
+RUN subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
+RUN dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 RUN dnf config-manager --set-enabled epel && dnf update -y
+
 RUN dnf update -y && rm -rf /var/cache/yum
 RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget iputils nmap-ncat screen\
     && dnf clean all
