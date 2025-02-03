@@ -1,4 +1,4 @@
-ARG OCP_CLI_VERSION=4.16.8
+# ARG OCP_CLI_VERSION=4.16.8
 # FROM registry.access.redhat.com/ubi8-minimal
 # FROM redhat/ubi8
 # FROM registry.access.redhat.com/ubi8/ubi
@@ -32,7 +32,7 @@ RUN curl https://rclone.org/install.sh | bash ; \
     touch ~/.config/rclone/rclone.conf
 
 RUN curl -L -s \
-    https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${OCP_CLI_VERSION}/openshift-client-linux-${OCP_CLI_VERSION}.tar.gz \
+    https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.16.8/openshift-client-linux-4.16.8.tar.gz \
     | tar -C /usr/local/bin/ -zxv oc kubectl ; \
     chmod +x /usr/local/bin/oc ; \
     chmod +x /usr/local/bin/kubectl
