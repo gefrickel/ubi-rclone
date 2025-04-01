@@ -7,7 +7,7 @@ export SCREENDIR=/tmp/screen
 ````
 ````
 mkdir /tmp/screen
-chmod -R 777 /tmp/screen
+chmod -R 700 /tmp/screen
 mkdir /tmp/rclone
 ````
 ````
