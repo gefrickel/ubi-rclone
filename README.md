@@ -3,8 +3,11 @@
 ### Running rclone with UBI
 ````
 export XDG_CONFIG_HOME=/tmp
+export SCREENDIR=/tmp/screen
 ````
 ````
+mkdir /tmp/screen
+chmod -R 777 /tmp/screen
 mkdir /tmp/rclone
 ````
 ````
