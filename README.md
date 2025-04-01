@@ -11,6 +11,10 @@ chmod -R 700 /tmp/screen
 mkdir /tmp/rclone
 ````
 ````
+export RCLONE_LOG_LEVEL=DEBUG
+RCLONE_CONFIG_DIR 
+````
+````
 cat << EOF > /tmp/rclone/rclone.conf
 [dsn]
 type = s3
