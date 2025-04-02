@@ -44,6 +44,8 @@ RUN curl -O \
     unzip ibm_utl_sraidmr_storcli-1.18.11_linux_32-64.zip ; \
     dnf install Linux/storcli-1.18.11-1.noarch.rpm -y
 
+RUN dnf -y install httpd 
+
 ### RUN rclone rcd --rc-web-gui
 # RUN mkdir /container-scripts/ && cp /etc/passwd /container-scripts/ && chmod 666 /container-scripts/passwd
 # RUN mkdir -p /runner/.gitlab-runner/ && chmod -R 777 /runner
