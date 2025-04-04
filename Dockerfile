@@ -33,8 +33,12 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 
 RUN dnf -y install rclone
 
+RUN mkdir -p /tmp/screen ; \
+    chmod -R 700 /tmp/screen ; \
+    mkdir -p /tmp/rclone
+
 RUN curl -L -s \
-    https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.16.8/openshift-client-linux-4.16.8.tar.gz \
+    https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.18.8/openshift-client-linux-4.18.8.tar.gz \
     | tar -C /usr/local/bin/ -zxv oc kubectl ; \
     chmod +x /usr/local/bin/oc ; \
     chmod +x /usr/local/bin/kubectl
