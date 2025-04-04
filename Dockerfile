@@ -69,5 +69,8 @@ ENTRYPOINT ["/bin/sh", "-c", "--" , "while true; do sleep 30; done;"]
 EXPOSE 5722
 
 # CMD ["/usr/sbin/sshd", "-D", "-d", "-e"]
-CMD ["/usr/bin/rclone", "rcd", "--rc-web-gui"]
+# CMD ["/usr/bin/rclone", "rcd", "--rc-web-gui"]
+
+CMD ["/usr/bin/rclone", "rcd", "--rc-web-gui", "--rc-addr :5572", "--rc-web-gui-no-open-browser", "-vv"  ]
+
 
