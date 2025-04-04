@@ -65,3 +65,9 @@ RUN dnf -y install httpd
 ### ENTRYPOINT ["/container-scripts/entrypoint.sh"]
 ENTRYPOINT ["/bin/sh", "-c", "--" , "while true; do sleep 30; done;"]
 ### ENTRYPOINT ["/rclone rcd --rc-web-gui"]
+
+EXPOSE 5722
+
+# CMD ["/usr/sbin/sshd", "-D", "-d", "-e"]
+CMD ["/usr/bin/rclone", "rcd", "--rc-web-gui"]
+
