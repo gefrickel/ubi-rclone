@@ -50,7 +50,7 @@ RUN curl -O \
 
 RUN curl -O \
     https://github.com/operator-framework/operator-registry/releases/download/v1.55.0/linux-amd64-opm; \
-    mvlinux-amd64-opm opm; \
+    mv linux-amd64-opm opm; \
     chmod +x /usr/local/bin/opm
     
 # RUN dnf -y install httpd 
