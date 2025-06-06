@@ -18,6 +18,9 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.
 # RUN dnf config-manager --set-enabled epel && dnf update -y
 
 RUN dnf update -y && rm -rf /var/cache/yum
+
+RUN dnf install -y python
+
 RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget iputils nmap-ncat screen btop nginx \
     && dnf clean all
 
