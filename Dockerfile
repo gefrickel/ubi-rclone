@@ -49,10 +49,9 @@ RUN curl -O \
     dnf install Linux/storcli-1.18.11-1.noarch.rpm -y
 
 RUN curl -O \
-    https://github.com/operator-framework/operator-registry/releases/download/v1.55.0/linux-amd64-opm; \
-    mv linux-amd64-opm opm; \
-    chmod +x /usr/local/bin/opm
-    
+    curl https://github.com/operator-framework/operator-registry/releases/download/v1.55.0/linux-amd64-opm -o /usr/local/bin/opm ; \
+    chmod +x /usr/local/bin/op
+
 # RUN dnf -y install httpd 
 
 ### RUN rclone rcd --rc-web-gui
