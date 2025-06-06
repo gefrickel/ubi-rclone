@@ -1,8 +1,8 @@
 # ARG OCP_CLI_VERSION=4.16.8
 # FROM registry.access.redhat.com/ubi8-minimal
 # FROM redhat/ubi8
-# FROM registry.access.redhat.com/ubi8/ubi
-FROM registry.access.redhat.com/ubi9/ubi-init
+FROM ubi9/python-39
+# FROM registry.access.redhat.com/ubi9/ubi-init
 # LABEL maintainer=""
 # ENV HOME='/runner/'
 
