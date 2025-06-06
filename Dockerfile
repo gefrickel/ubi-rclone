@@ -48,8 +48,8 @@ RUN curl -O \
     unzip ibm_utl_sraidmr_storcli-1.18.11_linux_32-64.zip ; \
     dnf install Linux/storcli-1.18.11-1.noarch.rpm -y
 
-RUN curl -O \
-    curl https://github.com/operator-framework/operator-registry/releases/download/v1.55.0/linux-amd64-opm -o /usr/local/bin/opm ; \
+RUN curl \
+    https://github.com/operator-framework/operator-registry/releases/download/v1.55.0/linux-amd64-opm -o /usr/local/bin/opm ; \
     chmod +x /usr/local/bin/op
 
 # RUN dnf -y install httpd 
