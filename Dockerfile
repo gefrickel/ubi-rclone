@@ -21,7 +21,7 @@ RUN dnf update -y && rm -rf /var/cache/yum
 
 RUN dnf install -y python
 
-RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget iputils nmap-ncat screen btop nginx \
+RUN dnf install -y nss_wrapper gettext tar gzip unzip git dnsutils skopeo wget iputils nmap-ncat screen btop nginx jq \
     && dnf clean all
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
